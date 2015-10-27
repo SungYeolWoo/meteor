@@ -13,7 +13,8 @@ $(window).on('hashchange', function () {
 // need an actual function to only debounce inside the if statement
 var actuallyUpdateUrl = _.debounce(function (el) {
   var docsType = Session.get("fullApi") ? "full" : "basic";
-  var newHash = "#/" + docsType + "/" + el.id;
+  var i18n = Session.get("i18n");
+  var newHash = "#/" + docsType + "/" + i18n + "/" + el.id;
 
   if (window.location.hash !== newHash) {
     ignoreUrlChange = true;
@@ -31,6 +32,12 @@ Tracker.autorun(function () {
   // returns a "location" like object with all of the url parts
   var current = Session.get('urlHash');
 
+  var id = current.split('/')[3];
+
+  if (id) {
+    Session.set("currentHash", id);
+  }
+
   // If the URL changes from a waypoint, do nothing
   if (ignoreUrlChange) {
     ignoreUrlChange = false;
@@ -41,12 +48,18 @@ Tracker.autorun(function () {
   Session.set("sidebarOpen", false);
 
   // redirect routes with no trailing slash
-  if (current === "#/basic") {
-    navigate("#/basic/");
-    return;
-  } else if (current === "#/full") {
-    navigate("#/full/");
-    return;
+  //if (current === "#/basic") {
+  //  navigate("#/basic/");
+  //  return;
+  //} else if (current === "#/full") {
+  //  navigate("#/full/");
+  //  return;
+  //}
+
+  if (current.match(/\/english\//)) {
+    Session.set("i18n", 'english');
+  } else if (current.match(/\/korean\//)) {
+    Session.set("i18n", 'korean');
   }
 
   if (current.match(/^#\/basic\//)) {
@@ -58,18 +71,22 @@ Tracker.autorun(function () {
       // XXX COMPAT WITH old docs
       navigate("#/full/" + deHash(current));
     } else {
+      if (! Session.get('i18n')) {
+        Session.set('i18n', 'english');
+      }
       if (localStorage.getItem("fullApi") === "true") {
-        navigate("#/full/");
+        navigate("#/full/" + Session.get('i18n') + "/" + Session.get('currentHash'));
       } else {
-        navigate("#/basic/");
+        navigate("#/basic/" + Session.get('i18n') + "/" + Session.get('currentHash'));
       }
     }
     return;
   }
 
   Tracker.afterFlush(function () {
+
     setTimeout(function () {
-      var id = current.split('/')[2];
+      var id = current.split('/')[3];
 
       var targetLocation = 0;
       if (id) {
@@ -107,6 +124,7 @@ Tracker.autorun(function () {
 // Make sure that this block is below the initial URL logic
 Tracker.autorun(function () {
   localStorage.setItem("fullApi", !! Session.get("fullApi"));
+  localStorage.setItem("i18n", Session.get("i18n"));
 });
 
 var setHashFromCurrentPosition = _.debounce(function () {

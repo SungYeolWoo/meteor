@@ -1,6 +1,7 @@
 // make links backwards compatible - for example, #deps -> #tracker
 
 Meteor.startup(function () {
+
   var getRedirect = function (hash) {
     if (hash.indexOf("deps") !== -1) {
       return hash.replace("deps", "tracker");

@@ -3,12 +3,13 @@
 <!-- clicking this anchor in the left bar should scroll to top of doc,
 not here -->
 <!-- XXX by: (three headshot thumbnails w names) -->
-
 {{#markdown}}
 
-<b>_Meteor is an ultra-simple environment for building modern websites.
-What once took weeks, even with the best tools, now takes hours with
-Meteor._</b>
+<b>_미티어는 모던 웹 사이트를 위한 매우 단순한 환경입니다.
+  (Meteor is an ultra-simple environment for building modern websites.)
+  한 주 정도면 당신과 함께할 아주 좋은 툴입니다. 지금 당장 미티어와 함께 하세요.
+  (What once took weeks, even with the best tools, now takes hours with
+Meteor.)_</b>
 
 The web was originally designed to work in the same way that mainframes
 worked in the 70s.  The application server rendered a screen and sent it
@@ -29,9 +30,15 @@ endpoints in the cloud, or manage a database, or wrangle an ORM layer,
 or swap back and forth between JavaScript and Ruby, or broadcast data
 invalidations to clients.
 
-{{> quickStart}}
+{{#if isKorean}}
+  {{> quickStart_kr}}
 
-{{> principles}}
+  {{> principles_kr}}
+{{else}}
+  {{> quickStart}}
+
+  {{> principles}}
+{{/if}}
 
 <h2 id="resources">Developer Resources</h2>
 

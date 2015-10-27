@@ -408,7 +408,7 @@ Template.nav.helpers({
 
           ret.push(_.extend({
             type: "section",
-            link: "#/full/" + id,
+            link: "#/full/" + Session.get('i18n') + "/" + id,
             depth: depth,
             style: ''
           }, item));

@@ -6,6 +6,11 @@ Template.registerHelper("fullApi", function () {
   return Session.get("fullApi");
 });
 
+Template.registerHelper("i18n", function () {
+  return Session.get("i18n");
+});
+
+
 Template.registerHelper('dstache', function() {
   return '{{';
 });
