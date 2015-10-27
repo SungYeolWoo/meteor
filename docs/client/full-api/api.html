@@ -1,0 +1,50 @@
+<template name="api">
+
+  {{> api_intro}}
+
+  {{#if isKorean}}
+    {{> apiCore_kr}}
+    {{> apiPubsub}}
+    {{> apiMethods}}
+    {{> apiCheck}}
+    {{> apiConnections}}
+    {{> apiCollections}}
+    {{> apiSession}}
+    {{> apiAccounts_kr}}
+    {{> apiPasswords}}
+    {{> apiTemplates}}
+    {{> apiBlaze}}
+    {{> apiTimers}}
+    {{> apiTracker}}
+    {{> apiReactiveVar}}
+    {{> apiEjson}}
+    {{> apiHttp}}
+    {{> apiEmail}}
+    {{> apiAssets_kr}}
+    {{> apiPackagejs}}
+    {{> apiMobileConfig}}
+  {{else}}
+    {{> apiCore}}
+    {{> apiPubsub}}
+    {{> apiMethods}}
+    {{> apiCheck}}
+    {{> apiConnections}}
+    {{> apiCollections}}
+    {{> apiSession}}
+    {{> apiAccounts}}
+    {{> apiPasswords}}
+    {{> apiTemplates}}
+    {{> apiBlaze}}
+    {{> apiTimers}}
+    {{> apiTracker}}
+    {{> apiReactiveVar}}
+    {{> apiEjson}}
+    {{> apiHttp}}
+    {{> apiEmail}}
+    {{> apiAssets}}
+    {{> apiPackagejs}}
+    {{> apiMobileConfig}}
+  {{/if}}
+
+
+</template>
