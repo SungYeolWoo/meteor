@@ -3,12 +3,12 @@
 <h2 id="accounts_api"><span>Accounts</span></h2>
 
 The Meteor Accounts system builds on top of the `userId` support in
-[`publish`](#publish_userId) and [`methods`](#method_userId). The core
-packages add the concept of user documents stored in the database, and
-additional packages add [secure password
+[`publish`](#publish_userId) and [`methods`](#method_userId). 
+The core packages add the concept of user documents stored 
+in the database, and additional packages add [secure password
 authentication](#accounts_passwords), [integration with third party
-login services](#meteor_loginwithexternalservice), and a [pre-built user
-interface](#accountsui).
+login services](#meteor_loginwithexternalservice), 
+and a [pre-built user interface](#accountsui).
 
 The basic Accounts system is in the `accounts-base` package, but
 applications typically include this automatically by adding one of the
