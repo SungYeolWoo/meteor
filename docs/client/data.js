@@ -162,6 +162,17 @@ DocsData = {
     "scope": "static",
     "summary": "Create a new user."
   },
+  "Accounts.emailTemplates": {
+    "filepath": "accounts-password/email_templates.js",
+    "kind": "member",
+    "lineno": 20,
+    "locus": "Server",
+    "longname": "Accounts.emailTemplates",
+    "memberof": "Accounts",
+    "name": "emailTemplates",
+    "scope": "static",
+    "summary": "Options to customize emails sent from the Accounts system."
+  },
   "Accounts.findUserByEmail": {
     "filepath": "accounts-password/password_server.js",
     "kind": "function",
@@ -2898,7 +2909,7 @@ DocsData = {
   "DDP.connect": {
     "filepath": "ddp-client/livedata_connection.js",
     "kind": "function",
-    "lineno": 1641,
+    "lineno": 1643,
     "locus": "Anywhere",
     "longname": "DDP.connect",
     "memberof": "DDP",
@@ -3027,7 +3038,8 @@ DocsData = {
   "DDPRateLimiter.addRule": {
     "filepath": "ddp-rate-limiter/ddp-rate-limiter.js",
     "kind": "function",
-    "lineno": 67,
+    "lineno": 69,
+    "locus": "Server",
     "longname": "DDPRateLimiter.addRule",
     "memberof": "DDPRateLimiter",
     "name": "addRule",
@@ -3067,7 +3079,8 @@ DocsData = {
   "DDPRateLimiter.removeRule": {
     "filepath": "ddp-rate-limiter/ddp-rate-limiter.js",
     "kind": "function",
-    "lineno": 81,
+    "lineno": 84,
+    "locus": "Server",
     "longname": "DDPRateLimiter.removeRule",
     "memberof": "DDPRateLimiter",
     "name": "removeRule",
@@ -3099,7 +3112,8 @@ DocsData = {
   "DDPRateLimiter.setErrorMessage": {
     "filepath": "ddp-rate-limiter/ddp-rate-limiter.js",
     "kind": "function",
-    "lineno": 27,
+    "lineno": 28,
+    "locus": "Server",
     "longname": "DDPRateLimiter.setErrorMessage",
     "memberof": "DDPRateLimiter",
     "name": "setErrorMessage",
@@ -4536,7 +4550,7 @@ DocsData = {
   "Meteor.apply": {
     "filepath": "ddp-client/livedata_connection.js",
     "kind": "function",
-    "lineno": 706,
+    "lineno": 708,
     "locus": "Anywhere",
     "longname": "Meteor.apply",
     "memberof": "Meteor",
@@ -4606,7 +4620,7 @@ DocsData = {
   "Meteor.call": {
     "filepath": "ddp-client/livedata_connection.js",
     "kind": "function",
-    "lineno": 665,
+    "lineno": 667,
     "locus": "Anywhere",
     "longname": "Meteor.call",
     "memberof": "Meteor",
@@ -4695,7 +4709,7 @@ DocsData = {
   "Meteor.disconnect": {
     "filepath": "ddp-client/livedata_connection.js",
     "kind": "function",
-    "lineno": 1018,
+    "lineno": 1020,
     "locus": "Client",
     "longname": "Meteor.disconnect",
     "memberof": "Meteor",
@@ -5026,7 +5040,7 @@ DocsData = {
   "Meteor.reconnect": {
     "filepath": "ddp-client/livedata_connection.js",
     "kind": "function",
-    "lineno": 1008,
+    "lineno": 1010,
     "locus": "Client",
     "longname": "Meteor.reconnect",
     "memberof": "Meteor",
@@ -5135,7 +5149,7 @@ DocsData = {
   "Meteor.startup": {
     "filepath": "meteor/startup_client.js",
     "kind": "function",
-    "lineno": 57,
+    "lineno": 64,
     "locus": "Anywhere",
     "longname": "Meteor.startup",
     "memberof": "Meteor",
@@ -5158,7 +5172,7 @@ DocsData = {
   "Meteor.status": {
     "filepath": "ddp-client/livedata_connection.js",
     "kind": "function",
-    "lineno": 996,
+    "lineno": 998,
     "locus": "Client",
     "longname": "Meteor.status",
     "memberof": "Meteor",
@@ -5171,7 +5185,7 @@ DocsData = {
   "Meteor.subscribe": {
     "filepath": "ddp-client/livedata_connection.js",
     "kind": "function",
-    "lineno": 480,
+    "lineno": 482,
     "locus": "Client",
     "longname": "Meteor.subscribe",
     "memberof": "Meteor",
@@ -6277,7 +6291,7 @@ DocsData = {
         }
       },
       {
-        "description": "<p>An object where the keys\nare NPM package names, and the keys are the version numbers of\nrequired NPM packages, just like in <a href=\"#Npm-depends\">Npm.depends</a>.</p>",
+        "description": "<p>An object where the keys\nare NPM package names, and the values are the version numbers of\nrequired NPM packages, just like in <a href=\"#Npm-depends\">Npm.depends</a>.</p>",
         "name": "npmDependencies",
         "type": {
           "names": [
@@ -8108,18 +8122,6 @@ DocsData = {
     ],
     "scope": "global",
     "summary": "Returns the extension that matched the compiler plugin.\nThe longest prefix is preferred."
-  },
-  "greet": {
-    "filepath": "accounts-password/email_templates.js",
-    "kind": "function",
-    "lineno": 6,
-    "locus": "Server",
-    "longname": "greet",
-    "name": "greet",
-    "options": [],
-    "params": [],
-    "scope": "global",
-    "summary": "Options to customize emails sent from the Accounts system."
   },
   "loggingIn": {
     "filepath": "accounts-base/accounts_client.js",
